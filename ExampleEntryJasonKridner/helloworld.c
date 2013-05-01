@@ -1,6 +1,28 @@
+#include <time.h>
 #include <stdio.h>
 
-int main(int argc, char** argv)
+using namespace System;
+
+void printdate()
 {
-	printf("Jason Kridner - %s\n", __DATE__);
+	time_t now;
+	struct tm *d;
+	char li[13];
+
+	time(&now);
+	d = localtime(&now);
+
+	strftime(li, 15, "%d/%m/%Y", d);
+
+	printf("%s\n", li);
+
 }
+
+int main(array<System::String ^> ^args)
+{
+	Console::WriteLine("Hello World\n");
+	Console::WriteLine("Thomas Carr\n");
+	printdate();
+    return 0;
+}
+
